@@ -20,6 +20,7 @@ define KernelPackage/amneziawg
 	SUBMENU:=Network Support
 	TITLE:=AmneziaWG VPN Kernel Module
 	FILES:=$(PKG_BUILD_DIR)/$(MAKE_PATH)/amneziawg.ko
+	AUTOLOAD:=$(call AutoProbe,amneziawg)
 	DEPENDS:= \
 		+kmod-udptunnel4 \
 		+kmod-udptunnel6 \
@@ -27,18 +28,13 @@ define KernelPackage/amneziawg
 		+kmod-crypto-lib-curve25519
 endef
 
-define Build/Prepare
-	$(call Build/Prepare/Default)
-	mkdir -p $(PKG_BUILD_DIR)/$(MAKE_PATH)/kernel
-	$(CP) $(LINUX_DIR)/* $(PKG_BUILD_DIR)/$(MAKE_PATH)/kernel/
-endef
+EXTRA_CFLAGS+=-DWIREGUARD_VERSION=\"$(PKG_VERSION)\"
 
 define Build/Compile
-	$(MAKE_VARS) $(MAKE) -C "$(LINUX_DIR)" \
+	$(MAKE) -C "$(LINUX_DIR)" \
 		$(KERNEL_MAKE_FLAGS) \
 		M="$(PKG_BUILD_DIR)/$(MAKE_PATH)" \
-		EXTRA_CFLAGS="$(BUILDFLAGS)" \
-		WIREGUARD_VERSION="$(WIREGUARD_VERSION)" \
+		EXTRA_CFLAGS="$(EXTRA_CFLAGS)" \
 		modules
 endef
 
