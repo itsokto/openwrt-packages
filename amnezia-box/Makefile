@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=sing-box
-PKG_VERSION:=1.13.4
+PKG_VERSION:=1.13.5
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/hoaxisr/amnezia-box/tar.gz/v$(PKG_VERSION)-awg2.0?
-PKG_HASH:=c4d73ff49be9c01c6f9a912d37ebccdd962697b90f540cbfa6398d19e1f19fdf
+PKG_SOURCE_URL:=https://codeload.github.com/itsokto/amnezia-box/tar.gz/v$(PKG_VERSION)-awg2.0?
+PKG_HASH:=c26b813687ee2751f7b14ff8c7699c7a920a9617f93990c2e6f34ef5ac174942
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
