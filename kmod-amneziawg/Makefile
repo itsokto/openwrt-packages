@@ -28,13 +28,12 @@ define KernelPackage/amneziawg
 		+kmod-crypto-lib-curve25519
 endef
 
-EXTRA_CFLAGS+=-DWIREGUARD_VERSION=\"$(PKG_VERSION)\"
-
 define Build/Compile
 	$(MAKE) -C "$(LINUX_DIR)" \
 		$(KERNEL_MAKE_FLAGS) \
 		M="$(PKG_BUILD_DIR)/$(MAKE_PATH)" \
-		EXTRA_CFLAGS="$(EXTRA_CFLAGS)" \
+		EXTRA_CFLAGS="$(BUILDFLAGS)" \
+		WIREGUARD_VERSION="$(WIREGUARD_VERSION)" \
 		modules
 endef
 
