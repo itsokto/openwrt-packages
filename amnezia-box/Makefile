@@ -35,7 +35,7 @@ define Package/sing-box
   SECTION:=net
   CATEGORY:=Network
   URL:=https://github.com/hoaxisr/amnezia-box
-  DEPENDS:=$(GO_ARCH_DEPENDS) +ca-bundle +kmod-inet-diag +kmod-tun +kmod-amneziawg
+  DEPENDS:=$(GO_ARCH_DEPENDS) +ca-bundle +kmod-inet-diag +kmod-tun
   USERID:=sing-box=5566:sing-box=5566
 endef
 
