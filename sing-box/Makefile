@@ -16,7 +16,6 @@ PKG_CPE_ID:=cpe:/a:sagernet:sing-box
 PKG_BUILD_DEPENDS:=golang/host
 PKG_BUILD_PARALLEL:=1
 PKG_BUILD_FLAGS:=no-mips16
-PKG_BUILD_DIR:=$(BUILD_DIR)/amnezia-box-$(PKG_VERSION)-awg2.0
 
 PKG_CHECK_FORMAT_SECURITY:=0
 STRIP:=:
