@@ -19,6 +19,7 @@ jobs:
         env:
           ARCH: mediatek-filogic
           FEEDNAME: custom_packages
+          PACKAGES: sing-box
           V: s
 
       - name: Upload APK artifacts
